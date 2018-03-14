@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>天池大数据可视化竞赛</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/MyStyle.css" />
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=058CwiuyuhGOOFhVrXh2GYhHQ5DeGPGi" type="text/javascript"></script>
+    <script type="text/javascript" src="lib/Heatmap_min.js"></script>
+    <script type="text/javascript" src="lib/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/d3.min.js"></script>
+    <script type="text/javascript" src="js/map.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/process.js"></script>
+    <script type="text/javascript" src="js/air.js"></script>
+    <script type="text/javascript" src="js/enterprise.js"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
+
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+<div id="top_title">江苏省污染监测数据可视化系统</div>
+<div id="top_nav">
+    <div id="top_bar">
+        <button type="button" class="btn btn-link btn-sm" style="text-decoration: none" id="airbtn" onclick="showmap(0)">空气监测状况</button>
+        <button type="button" class="btn btn-link btn-sm" style="text-decoration: none" id="pollutionbtn" onclick="showmap1(0)">企业排污状况</button>
+        <button type="button" class="btn btn-link btn-sm" style="text-decoration: none" id="rainbtn" onclick="showmap2(0)">天气状况</button>
+        <button type="button" class="btn btn-link btn-sm" style="text-decoration: none" id="mulbtn" onclick="showmap3()">综合展示</button>
+    </div>
+</div>
+<div id="maparea">
+        <div id="map"><script>readData();</script></div>
+        <div id="map1">
+            <div id="submap1"></div>
+            <div id="submap2"></div>
+            <div id="submap3"></div>
+        </div>
+        <div id="graph">
+            <div id="svg_area">
+                <script type="text/javascript" src="js/air.js"></script>
+                <script type="text/javascript" src="js/enterprise.js"></script>
+                <script type="text/javascript" src="js/weather.js"></script>
+            </div>
+        </div>
+</div>
+<div id="process_bar">
+    <!--<input type="button" value="开始"></input>-->
+    <button type="button" class="btn btn-link btn-sm"  id="startbtn" onclick="startend()">开始</button>
+    <div id="process_box">
+        <div id="process_bg"> 
+            <div id="process_bgcolor"></div>
+        </div>
+        <div id="process_bt"></div>
+    </div>
+    <div id="process_text">time:2015/12/1 0:00</div>
+    <!--<script>draw();</script>-->
+</div>
+<script type="text/javascript" src="js/process.js"></script>
+</body>
+</html>
